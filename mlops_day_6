@@ -1,0 +1,66 @@
+Feature Selection is very important concept
+  We need huge data, accurate data, right feature selection.
+
+There are 2 types
+1) Manual
+2) Programming
+
+Its hard to remove the unwanted data in manual process so we need programmatic way.
+
+Programming has 3 types
+1) Filter Method
+2) Wrapper Method
+3) Embedded Method
+
+Filter Method:
+  What are the inputs/features effecting the output/feature, We need to consider all of them.
+
+So we need correlation correlation
+
+1) correlation
+  ds.corr()
+  1   : High
+  0   : NAN
+  -1  : Negligible
+
+2) Then we need variance
+  s=VarianceThreshold(threshold=0)  #s is just  variable storing the algorithm.
+  s.fit(ds) #fits dataset inside this algorithm | train the model
+  s.get_support() #will tell you if your column should be a feature or not | prediction
+
+  Threshold varies based on the number of constant data.
+
+  threshold=0 for the constant data
+  threshold=10% for the quasi constant variable
+
+Multi Linear Regression
+  Where you have more than one feature to define the prediction.
+  After feature selection done, keep the features selected in a new variable and use train_test_split() function.
+  Anything above 80 % is good.
+
+Computer Vision
+
+  Video is a stream of photos
+  You can capture a photo using cv2 library
+
+  import cv2
+  frame = cv2.VideoCapture(0)
+  status, photo = frame.read()
+  cv2.imshow('hi', photo)
+  cv2.waitkey()
+  cv2.destroyAllWindows()
+
+If we want a video then use loops and break statement wherever needed.
+  while true:
+    above logic
+If we want to get smooth video then pass wait time
+  cv2.waitkey(100)
+If we want to interput the infinite loop
+  if cv2.waitkey(100) == 13:
+    break
+If we want to resize
+  cv2.resize(photo, (100,100))
+If we want to crop
+  photo[100:400, 200:500]
+
+  
